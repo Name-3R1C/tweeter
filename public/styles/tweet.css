@@ -28,8 +28,8 @@ article {
   border-bottom: 4px solid #545149;
 }
 
-i.section {
-  color: #1e3050;
+.icon {
+  color: #4056A1;
 }
 
 .accountName {
@@ -48,6 +48,6 @@ i.section {
   box-shadow: 5px 5px #545149;
 }
 
-.social:hover {
+.icon:hover {
   color: #ff0000;
 }
