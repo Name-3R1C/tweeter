@@ -14,7 +14,7 @@
 
 .new-tweet textarea {
   outline: 0;
-  border-width: 0 0 4px;
+  border-width: 0 0 5px;
   background: none;
   width: 100%;
 }

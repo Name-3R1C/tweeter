@@ -1,0 +1,53 @@
+.tweets-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5em 1.5em 1.5em;
+  border: 4px solid #545149;
+  margin: 1em 0 1em 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.picName {
+  display: flex;
+  flex-direction: row;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 1em;
+}
+
+article {
+  display: flex;
+  border-bottom: 4px solid #545149;
+}
+
+i {
+  color: #1e3050;
+}
+
+.accountName {
+  color: rgb(174, 171, 171);
+  font-weight: bold;
+}
+.pic {
+  padding-right: 1em;
+}
+
+.social {
+  padding-right: 1em;
+}
+
+.tweets-container:hover {
+  box-shadow: 5px 5px #545149;
+}
+
+.social:hover {
+  color: #ff0000;
+}
