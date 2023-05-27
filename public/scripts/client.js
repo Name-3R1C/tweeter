@@ -45,13 +45,19 @@ $(document).ready(function() {
       renderTweets(data);
     });
   };
-  
+
   loadTweets();
 
   $("form").on("submit", function(event) {
     event.preventDefault();
-    const tweetContent = $(this).serialize();
-    console.log(tweetContent);
-    $.post("/tweets", tweetContent);
+    const msg = $(this).serialize();
+    const content = msg.substring(5);
+    if(content.length === 0 ) {
+      alert("No tweet content present!");
+    } else if(content.length > 140) {
+      alert("Tweet content too long!");
+    } else {
+      $.post("/tweets", msg);
+    }
   });
 });
