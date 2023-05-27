@@ -9,6 +9,13 @@ const renderTweets = function(tweets) {
   }
 };
 
+// Return a string with escaped unsafe characters
+const escape = function(str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 // Generate individual tweet
 const createTweetElement = function(tweet) {
   let $tweet = $(`
@@ -21,7 +28,7 @@ const createTweetElement = function(tweet) {
         <div class="accountName"> ${tweet.user.handle} </div>
       </div>
 
-      <p>${tweet.content.text}</p>
+      <p>${escape(tweet.content.text)}</p>
 
       <footer>
         <div class="date"> ${timeago.format(tweet.created_at)}</div>
@@ -52,13 +59,13 @@ $(document).ready(function() {
     event.preventDefault();
     const msg = $(this).serialize();
     const content = msg.substring(5);
-    if(content.length === 0 ) {
+    if (content.length === 0) {
       alert("No tweet content present!");
-    } else if(content.length > 140) {
+    } else if (content.length > 140) {
       alert("Tweet content too long!");
     } else {
       $.post("/tweets", msg)
-      .done(loadTweets());
+        .done(loadTweets());
     }
   });
 });
