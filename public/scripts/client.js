@@ -3,32 +3,6 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-// Test / driver code (temporary). Eventually will get this from the server.
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-];
-
 const renderTweets = function(tweets) {
   for (const tweet of tweets) {
     $('#tweets-container').prepend(createTweetElement(tweet));
@@ -50,7 +24,7 @@ const createTweetElement = function(tweet) {
       <p>${tweet.content.text}</p>
 
       <footer>
-        <div class="date"> ${tweet.created_at}</div>
+        <div class="date"> ${timeago.format(tweet.created_at)}</div>
         <div class="socialIcon">
           <i class="fa-regular fa-star icon"></i>
           <i class="fa-regular fa-share-from-square icon"></i>
@@ -66,7 +40,14 @@ const createTweetElement = function(tweet) {
 $(document).ready(function() {
   console.log("document ready");
   
-  renderTweets(data);
+  const loadTweets = function() {
+    $.get("/tweets", function(data) {
+      renderTweets(data);
+    });
+  };
+  
+  loadTweets();
+
   $("form").on("submit", function(event) {
     event.preventDefault();
     const tweetContent = $(this).serialize();

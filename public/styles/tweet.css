@@ -41,7 +41,7 @@ img {
   padding-right: 1em;
 }
 
-.tweets-container:hover {
+article:hover {
   box-shadow: 5px 5px #545149;
 }
 
