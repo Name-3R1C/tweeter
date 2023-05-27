@@ -60,12 +60,19 @@ $(document).ready(function() {
     const msg = $(this).serialize();
     const content = msg.substring(5);
     if (content.length === 0) {
-      alert("No tweet content present!");
+      $("#error").show();
+      $("#error").html('<i class="fa-solid fa-triangle-exclamation"></i> Tweet must have content');
     } else if (content.length > 140) {
-      alert("Tweet content too long!");
+      $("#error").show();
+      $("#error").html('<i class="fa-solid fa-triangle-exclamation"></i> Too long, maximum 140 characters');
     } else {
       $.post("/tweets", msg)
-        .done(loadTweets());
+        .done(function(response) {
+          loadTweets();
+          $("#tweet-text").val("");
+          $(".counter").text("140");
+          $("#error").hide();
+        });
     }
   });
 });

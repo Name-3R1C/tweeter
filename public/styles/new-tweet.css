@@ -1,11 +1,10 @@
 .new-tweet {
   display: flex;
   justify-content: center;
-  align-content: center;
+  flex-direction: column;
 }
 .new-tweet form {
   width: 100%;
-  
 }
 
 .new-tweet label {
@@ -32,4 +31,20 @@
 
 .new-tweet output {
   font-family: 'Bungee', cursive;
+}
+
+#error {
+  margin: 10px 0;
+  padding: 10px;
+  border: 3px;
+  color: #D8000C;
+  background-color: #FFBABA;
+}
+
+#error {
+  display: none;
+}
+
+.new-tweet i {
+  padding-right: 0.5em;;
 }
