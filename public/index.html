@@ -20,6 +20,7 @@
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
@@ -51,7 +52,6 @@
       <h1>Testing</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       <section class="new-tweet">
-        <!-- <h2>Compose Tweet</h2> -->
         <form method="POST" action="/tweets">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
@@ -62,26 +62,8 @@
         </form>
       </section>
 
-      <section class="tweets-container">
-        <div class="header">
-          <div class="picName">
-            <span class="fa-regular fa-user pic"></span>
-            <div> Newton </div>
-          </div>
-          <div class="accountName"> @Sirisacc </div>
-        </div>
-        <article>
-          <p>Tweet body!!! Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-        </article>
-        <footer>
-          <div class="date"> 10 days ago</div>
-          <div class="socialIcon">
-            <i class="fa-regular fa-star icon"></i>
-            <i class="fa-regular fa-share-from-square icon"></i>
-            <i class="fa-regular fa-thumbs-up icon"></i>
-          </div>
-        </footer>
-      </section>
+      <!-- This section contains individual tweets -->
+      <section id="tweets-container"></section>
     </main>
   </body>
 </html>

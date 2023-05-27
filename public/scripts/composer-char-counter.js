@@ -1,6 +1,4 @@
 $(document).ready(function() {
-  console.log("document ready");
-  
   $("textarea").on("input", function() {
     const str = $(this).val();
     const wordLeft = 140 - str.length;

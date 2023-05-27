@@ -1,9 +1,7 @@
-.tweets-container {
-  display: flex;
-  flex-direction: column;
-  padding: 1.5em 1.5em 1.5em;
+article {
+  padding: 1em;
   border: 4px solid #545149;
-  margin: 1em 0 1em 0;
+  margin: 2em 0 1em 0;
 }
 
 .header {
@@ -11,9 +9,10 @@
   justify-content: space-between;
 }
 
-.picName {
+.avatarsName {
   display: flex;
   flex-direction: row;
+  align-items: flex-end;
 }
 
 footer {
@@ -21,23 +20,21 @@ footer {
   flex-direction: row;
   justify-content: space-between;
   padding-top: 1em;
-}
-
-article {
-  display: flex;
-  border-bottom: 4px solid #545149;
+  border-top: 4px solid #545149;
 }
 
 .icon {
   color: #4056A1;
+  padding-right: 0.5em;
 }
 
 .accountName {
   color: rgb(174, 171, 171);
   font-weight: bold;
 }
-.pic {
-  padding-right: 1em;
+
+img {
+  padding-right: 0.5em;
 }
 
 .social {
