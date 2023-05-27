@@ -57,7 +57,8 @@ $(document).ready(function() {
     } else if(content.length > 140) {
       alert("Tweet content too long!");
     } else {
-      $.post("/tweets", msg);
+      $.post("/tweets", msg)
+      .done(loadTweets());
     }
   });
 });
