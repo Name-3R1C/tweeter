@@ -27,10 +27,10 @@ const data = [
     },
     "created_at": 1461113959088
   }
-]
+];
 
 const renderTweets = function(tweets) {
-  for(const tweet of tweets) {
+  for (const tweet of tweets) {
     $('#tweets-container').prepend(createTweetElement(tweet));
   }
 };
@@ -65,5 +65,12 @@ const createTweetElement = function(tweet) {
 
 $(document).ready(function() {
   console.log("document ready");
+  
   renderTweets(data);
+  $("form").on("submit", function(event) {
+    event.preventDefault();
+    const tweetContent = $(this).serialize();
+    console.log(tweetContent);
+    $.post("/tweets", tweetContent);
+  });
 });
