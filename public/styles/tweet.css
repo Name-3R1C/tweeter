@@ -37,10 +37,6 @@ footer {
   font-weight: bold;
 }
 
-img {
-  padding-right: 0.5em;
-}
-
 .social {
   padding-right: 1em;
 }
@@ -51,6 +47,13 @@ article:hover {
 
 .icon:hover {
   color: #ff0000;
+}
+
+@media only screen and (min-width: 768px) {
+  #tweets-container {
+    max-width: 75%;
+    float: right;
+  }
 }
 
 @media only screen and (min-width: 1024px) {

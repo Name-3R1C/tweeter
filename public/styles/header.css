@@ -9,6 +9,26 @@ header {
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
 }
 
+img {
+  padding-top: 1em;
+}
+
+@media only screen and (min-width: 768px) {
+  header {
+    max-width: 20%;
+    float: left;
+    margin: 6em 0 0 1em;
+    display: flex;
+    flex-direction: column;
+    min-width: 7em;
+  }
+
+  header img {
+    position: relative;
+    width: 8em;
+  }
+}
+
 @media only screen and (min-width: 1024px) {
   header {
     max-width: 30%;
