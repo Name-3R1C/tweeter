@@ -35,4 +35,9 @@ img {
     float: left;
     margin: 7em 0 0 2em;
   }
+
+  header img {
+    /* position: relative; */
+    width: auto;
+  }
 }
