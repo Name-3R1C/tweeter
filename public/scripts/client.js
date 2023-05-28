@@ -58,11 +58,11 @@ $(document).ready(function() {
   $("form").on("submit", function(event) {
     event.preventDefault();
     const msg = $(this).serialize();
-    const content = msg.substring(5);
-    if (content.length === 0) {
+    console.log('msg ' +msg);
+    if ((msg.length - 5) === 0) {
       $("#error").show();
-      $("#error").html('<i class="fa-solid fa-triangle-exclamation"></i> Tweet must have content');
-    } else if (content.length > 140) {
+      $("#error").html('<i class="fa-solid fa-triangle-exclamation"></i> Tweet must have some content');
+    } else if ((msg.length - 5) > 140) {
       $("#error").show();
       $("#error").html('<i class="fa-solid fa-triangle-exclamation"></i> Too long, maximum 140 characters');
     } else {

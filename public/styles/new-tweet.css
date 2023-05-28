@@ -2,9 +2,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-}
-.new-tweet form {
-  width: 100%;
+  margin-top: 2em;
 }
 
 .new-tweet label {
@@ -16,6 +14,7 @@
   border-width: 0 0 5px;
   background: none;
   width: 100%;
+  margin-bottom: 0.5em;
 }
 
 .new-tweet button  {
@@ -47,4 +46,13 @@
 
 .new-tweet i {
   padding-right: 0.5em;;
+}
+
+@media only screen and (min-width: 1024px) {
+  .new-tweet {
+    max-width: 60%;
+    float: right;
+    margin-top: 7em;
+    width: 100%;
+  }
 }

@@ -15,6 +15,10 @@ article {
   align-items: flex-end;
 }
 
+article p {
+  overflow-wrap: break-word;
+}
+
 footer {
   display: flex;
   flex-direction: row;
@@ -47,4 +51,11 @@ article:hover {
 
 .icon:hover {
   color: #ff0000;
+}
+
+@media only screen and (min-width: 1024px) {
+  #tweets-container {
+    max-width: 60%;
+    float: right;
+  }
 }

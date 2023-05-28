@@ -8,3 +8,11 @@ header {
   background-color: #ced1d6;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
 }
+
+@media only screen and (min-width: 1024px) {
+  header {
+    max-width: 30%;
+    float: left;
+    margin: 7em 0 0 2em;
+  }
+}
