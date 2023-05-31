@@ -24,13 +24,12 @@ const createTweetElement = function(tweet) {
       <div class="header">
         <div class="avatarsName">
           <img src=${tweet.user.avatars}>
+          <span></span>
           <div> ${tweet.user.name} </div>
         </div>
         <div class="accountName"> ${tweet.user.handle} </div>
       </div>
-
       <p>${escape(tweet.content.text)}</p>
-
       <footer>
         <div class="date"> ${timeago.format(tweet.created_at)}</div>
         <div class="socialIcon">
@@ -46,37 +45,35 @@ const createTweetElement = function(tweet) {
 };
 
 $(document).ready(function() {
-  // load tweets from database
   const loadTweets = function() {
     $.get("/tweets")
       .done(function(data) {
-        renderTweets(data)
+        renderTweets(data);
       })
       .fail(function(xhr, status, error) {
         console.log("Error getting tweets: " + error);
-      })
+      });
   };
 
   loadTweets();
 
   $("form").on("submit", function(event) {
     event.preventDefault();
-    let msg = $(this);
     const tweetText = $("#tweet-text").val();
-
+    // form validation
     if (!tweetText) {
       $("#error").slideDown();
       $("#error").html('<i class="fa-solid fa-triangle-exclamation"></i> Mindreader function under construction (No content present) ');
       return;
-    } 
+    }
     
     if ((tweetText.length) > 140) {
       $("#error").slideDown();
       $("#error").html('<i class="fa-solid fa-triangle-exclamation"></i> So much to say not much space (max 140 characters)');
       return;
-    } 
-    msg = $(this).serialize();
+    }
     // send POST request to server
+    const msg = $(this).serialize();
     $.post("/tweets", msg)
       .done(function(response) {
         loadTweets();
@@ -86,6 +83,6 @@ $(document).ready(function() {
       })
       .fail(function(xhr, status, error) {
         console.log("Error sending tweet: " + error);
-      })
+      });
   });
 });
