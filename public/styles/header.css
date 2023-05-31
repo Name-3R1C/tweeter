@@ -1,5 +1,6 @@
 header {
   margin-top: 120px;
+  height: 400px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -7,10 +8,6 @@ header {
   flex-direction: column;
   background-color: #ced1d6;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
-}
-
-img {
-  padding-top: 1em;
 }
 
 @media only screen and (min-width: 768px) {
@@ -24,7 +21,6 @@ img {
   }
 
   header img {
-    position: relative;
     width: 8em;
   }
 }
@@ -37,7 +33,6 @@ img {
   }
 
   header img {
-    /* position: relative; */
     width: auto;
   }
 }

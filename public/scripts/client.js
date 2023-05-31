@@ -3,20 +3,21 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+
 const renderTweets = function(tweets) {
   for (const tweet of tweets) {
     $('#tweets-container').prepend(createTweetElement(tweet));
   }
 };
 
-// Return a string with escaped unsafe characters
+// return a string with escaped unsafe characters
 const escape = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
-// Generate individual tweet
+// generate individual tweet
 const createTweetElement = function(tweet) {
   let $tweet = $(`
     <article>
@@ -45,34 +46,46 @@ const createTweetElement = function(tweet) {
 };
 
 $(document).ready(function() {
-  console.log("document ready");
-  
+  // load tweets from database
   const loadTweets = function() {
-    $.get("/tweets", function(data) {
-      renderTweets(data);
-    });
+    $.get("/tweets")
+      .done(function(data) {
+        renderTweets(data)
+      })
+      .fail(function(xhr, status, error) {
+        console.log("Error getting tweets: " + error);
+      })
   };
 
   loadTweets();
 
   $("form").on("submit", function(event) {
     event.preventDefault();
-    const msg = $(this).serialize();
-    console.log('msg ' +msg);
-    if ((msg.length - 5) === 0) {
-      $("#error").show();
-      $("#error").html('<i class="fa-solid fa-triangle-exclamation"></i> Tweet must have some content');
-    } else if ((msg.length - 5) > 140) {
-      $("#error").show();
-      $("#error").html('<i class="fa-solid fa-triangle-exclamation"></i> Too long, maximum 140 characters');
-    } else {
-      $.post("/tweets", msg)
-        .done(function(response) {
-          loadTweets();
-          $("#tweet-text").val("");
-          $(".counter").text("140");
-          $("#error").hide();
-        });
-    }
+    let msg = $(this);
+    const tweetText = $("#tweet-text").val();
+
+    if (!tweetText) {
+      $("#error").slideDown();
+      $("#error").html('<i class="fa-solid fa-triangle-exclamation"></i> Mindreader function under construction (No content present) ');
+      return;
+    } 
+    
+    if ((tweetText.length) > 140) {
+      $("#error").slideDown();
+      $("#error").html('<i class="fa-solid fa-triangle-exclamation"></i> So much to say not much space (max 140 characters)');
+      return;
+    } 
+    msg = $(this).serialize();
+    // send POST request to server
+    $.post("/tweets", msg)
+      .done(function(response) {
+        loadTweets();
+        $("#tweet-text").val("");
+        $(".counter").text("140");
+        $("#error").hide();
+      })
+      .fail(function(xhr, status, error) {
+        console.log("Error sending tweet: " + error);
+      })
   });
 });
