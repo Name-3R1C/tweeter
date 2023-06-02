@@ -6,7 +6,7 @@ This project is build upon [LHL's Tweeter Project](https://github.com/lighthouse
 
 ## Getting Started
 
-1. Clone the repository: `git clone https://github.com/Name-3R1C/tweeter-demo.git`
+1. Clone the repository: `git clone https://github.com/Name-3R1C/tweeter/blob/master/docs/tweeter-demo.gif`
 2. Navigate to the project directory: `cd tweeter`
 3. Install dependencies: `npm install`
 4. Start the server: `npm start`
