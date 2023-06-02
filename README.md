@@ -6,7 +6,7 @@ This project is build upon [LHL's Tweeter Project](https://github.com/lighthouse
 
 ## Getting Started
 
-1. Clone the repository: `git clone https://github.com/Name-3R1C/tweeter.git`
+1. Clone the repository: `git clone https://github.com/Name-3R1C/tweeter-demo.git`
 2. Navigate to the project directory: `cd tweeter`
 3. Install dependencies: `npm install`
 4. Start the server: `npm start`
@@ -30,6 +30,10 @@ This project is build upon [LHL's Tweeter Project](https://github.com/lighthouse
 
 - Express
 - Node 5.10.x or above
+- body-parser
+- chance
+- express
+- md5
 
 ## Final Product
 ![](https://github.com/Name-3R1C/tweeter/blob/master/demo/tweeter.gif)
