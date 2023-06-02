@@ -30,3 +30,6 @@ This project is build upon [LHL's Tweeter Project](https://github.com/lighthouse
 
 - Express
 - Node 5.10.x or above
+
+## Final Product
+![](https://github.com/Name-3R1C/tweeter/blob/master/demo/tweeter.gif)
