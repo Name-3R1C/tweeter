@@ -16,7 +16,7 @@ article {
   align-items: center;
 }
 
-span {
+.avatarsName span {
   padding: 0 5px;
 }
 
@@ -58,6 +58,7 @@ article:hover {
   #tweets-container {
     max-width: 75%;
     float: right;
+    width: 100%;
   }
 }
 

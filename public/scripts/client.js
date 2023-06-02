@@ -5,8 +5,11 @@
  */
 
 const renderTweets = function(tweets) {
+  const tweetsContainer = $('#tweets-container');
+  tweetsContainer.empty();
+
   for (const tweet of tweets) {
-    $('#tweets-container').prepend(createTweetElement(tweet));
+    tweetsContainer.prepend(createTweetElement(tweet));
   }
 };
 

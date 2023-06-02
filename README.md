@@ -1,16 +1,30 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+Tweeter is a simple, single-page Twitter clone that allows users to post short messages (tweets) and view them in a chronological order.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
+This project is build upon [LHL's Tweeter Project](https://github.com/lighthouse-labs/tweeter) where student mainly focused on client side web development  to practice HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
 
 ## Getting Started
 
-1. [Create](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) a new repository using this repository as a template.
-2. Clone your repository onto your local device.
-3. Install dependencies using the `npm install` command.
-3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
-4. Go to <http://localhost:8080/> in your browser.
+1. Clone the repository: `git clone https://github.com/Name-3R1C/tweeter.git`
+2. Navigate to the project directory: `cd tweeter`
+3. Install dependencies: `npm install`
+4. Start the server: `npm start`
+5. Open your web browser and visit `http://localhost:8080`
+6. Compose your tweet in the input box and click "Tweet" to post it.
+
+## Features
+
+- Tweet composition: Compose and post tweets with a character limit of 140.
+- Real-time updates: View tweets in chronological order without the need to refresh the page.
+- Responsiveness: The application is designed to work seamlessly on desktop and mobile devices.
+
+## Technologies Used
+
+- HTML5, CSS3 for the frontend structure and styling.
+- JavaScript and jQuery for client-side interactivity and AJAX requests.
+- Node.js and Express.js for the server-side implementation.
+- Other libraries and tools: Body-parser, Chance, Nodemon, and more.
 
 ## Dependencies
 
